@@ -2,10 +2,15 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/style.css' />
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/public/css/style.css">
+	<!-- endinject -->
   </head>
   <body>
     {{{body}}}
-	<script src="/js/bundle.js"></script>
+	<!-- inject:js -->
+	<script src="/public/js/main.js"></script>
+	<script src="/public/js/react.js"></script>
+	<!-- endinject -->
   </body>
 </html>
