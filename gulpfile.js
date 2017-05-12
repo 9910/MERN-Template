@@ -13,6 +13,20 @@ var envenv = $.util.env;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 
+/**
+ * Start app and restart after every change
+ */
+gulp.task('start', function () {
+  $.nodemon({
+    script: './bin/www', // Server to start
+	ext: 'js hbs', // File types to watch for changes
+	env: { 
+		'NODE_ENV': 'development', // Environment variables
+		'PORT': 3000
+	}
+  })
+})
+
 gulp.task('styles', ['clean-styles'], function() {
     log('Compiling Less --> CSS');
     return gulp
